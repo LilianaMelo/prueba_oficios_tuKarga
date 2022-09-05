@@ -1,15 +1,32 @@
 // import logo from './logo.svg';
-import React, { useState } from 'react';
-import { Fragment, useEffect, } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 // import MapView from './components/Map/MapView';
 // import Login from './components/Login/Login';
 // import Navbar from './components/Navbar/Navbar';
-// import ServicesList from './components/ServicesList/ServicesList';
+import ServicesList from './components/ServicesList/ServicesList';
 import MapView from './components/Map/MapView';
 
 
+
 function App() {
+
+
+    return (
+
+        <div>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/:id' element={<MapView />} />
+                <Route path='/:id' element={<ServicesList  /> } />
+            </Routes>
+        </div>
+
+    );
+}
+
+
 
     // const [userInfo, setUserInfo ] = useState([]);//Ok 
 
@@ -33,26 +50,20 @@ function App() {
     }, [url])
     */
 
+const Home = () => {
+        
 
     return (
 
-        <Fragment>
+        <>
 
-      
-            {/* <ServicesList  />  */}
- 
-            <MapView />
+            <h1>Home</h1>
+            {/* <MapView /> */}
+            <ServicesList  />
 
-            
-            
-            {/* <Navbar /> */}
-            {/* <Login />  */}
-            
-
-        </Fragment>
+        </>
         
     );
-
 }
 
 export default App;

@@ -11,7 +11,7 @@ const Footer = () => {
 
         <footer>
             <div className='Footer'>
-            <img className='logo'src={logo}/>
+            <img className='logo'src={logo} alt="logo"/>
                 <div className='group-links'>
                     <div className='links-footer'>
                         
@@ -28,14 +28,14 @@ const Footer = () => {
                     <div className='links-footer'>
                         <p>Recibimos todo tipo de pagos</p>
                         <div className=''>
-                            <img src={mediosPago} />
+                            <img src={mediosPago} alt="mediosPago"/>
                         </div>
                         
                     </div>
                     <div className='links-footer'>
                         <p>Siguenos en todas nuestra redes</p>
                         <div className='group-img-redes'>
-                            <img className='img-redes' src={logosRedes}/>
+                            <img className='img-redes' src={logosRedes} alt="redes"/>
                         </div>
                     </div>
                 </div>

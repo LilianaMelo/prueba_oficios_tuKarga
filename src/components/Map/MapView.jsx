@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -7,17 +7,18 @@ import Markers from './Markers';
 import Navbar from '../Navbar/Navbar';
 import './Map.css';
 
-
-import { useState } from 'react';
-
-
 import moto from './Images/Moto.png'
 import Footer from '../Footer/Footer';
+
 
 const MapView = () => { 
     // aqui va la informacion del detalle.
 
-    const id = 2; 
+    // const ServicesList = ServicesList({id}); // importa el id del servicesList
+
+    // const id = 1 ; 
+
+    const {id} = useParams(); // id del servicio y mismo de la urlApi
     const [ infoData, setInfoData ] = useState([]);
 
     const { price_text, type_pay, status_string, address } = infoData;
@@ -29,11 +30,11 @@ const MapView = () => {
 
     const urlAPI = `https://api.delivery.iguarayalabs.com/app/services-detail/${id}`
 
-    useState(() => {
+    useEffect(() => {
         (async function () {
             const respuesta = await fetch(urlAPI).then((res) => res.json());
             setInfoData(respuesta.data);
-            console.log(respuesta.data);
+            // console.log(respuesta.data);
         })();
 
     }, [urlAPI]);
@@ -44,10 +45,7 @@ const MapView = () => {
         })()
     },[]); */
 
-
-
-
-    return (  //, bogotá 4.632457, -74.073243
+    return (  
         
         <>    
                 
@@ -88,9 +86,6 @@ const MapView = () => {
                         <p className='parrafo'><br />$ Costo servicio: {price_text}</p>
                         <p className='parrafo'>$ Medio de pago: {type_pay}</p>
 
-
-                        
-
                         {/* <br />
                         <br />
                         <br /> */}
@@ -100,7 +95,7 @@ const MapView = () => {
                         
                 </div>
 
-                <MapContainer center={{lat:'4.7129253914906215', lng:'-74.071895898515'}} zoom={13} >
+                <MapContainer center={{lat:'4.68651425', lng:'-74.09029325'}} zoom={13} >
 
                     <TileLayer 
                         url='https://tile.openstreetmap.org/{z}/{x}/{y}.png' 

@@ -1,116 +1,98 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import './ServicesList.css'
 
 const ServicesList = () => {
 
-    const id = 131
+    const id = 131 // id usuario que se logea
 
-    const [ service, setService ] = useState();
-
-    // const { service_name, date_text, price_text, status_string } = service; 
-
-    // const {  } = resultado
+    const [ list, setService ] = useState([]);
+    // console.log("datos lista");
+    // console.log(list);
 
     const urlApi = `https://api.delivery.iguarayalabs.com/app/services-list/0/${id}`
 
     useEffect( () => {
         ( async function () {
-            const data = await fetch(urlApi).then((res) => res.json());
-            setService(data.data);
-            // console.log(data.data);
+            const respuesta = await fetch(urlApi).then((res) => res.json());
+            setService(respuesta.data); // .data
+            // console.log(respuesta.data); 
+
         })();
     },[urlApi])
    
 
-    // const set = new Set([data.data]);
+    let display = ("");
 
-    const set = new Set(["one", "two", "three"]); // ejemplo de extraer info de un array de un objeto
+    if (list) {
+        display = list.map((item, i) => { 
+            const { id, service_name, status_string, price_text, date_text } = item;
+            // id del item o servicio enviarlo al Map view.
+            // console.log("informacion del servicio: " );
+            // console.log(id, service_name, status_string, price_text, date_text); {/* se envia este id a la vista del mapa */}
+            return (
 
+                <Link
+                    key={id}
+                    className="link-page-map"
+                    to={`${id}`}
+                
+                >
+                
+
+
+                <table className='content-table'>
+                    <tbody>
+                        <tr className='row' >
+                            <th key={i} className="id-fondo">{id}</th>
+                            <td>{service_name}</td>
+                            <td>{date_text}</td>
+                            <td>"-Ciudad"</td>
+                            <td>"-Dirección"</td>
+                            <td>{price_text}</td> 
+                            <td>{status_string}</td>
+                        </tr>
+                        <hr />
+                    </tbody>
+                </table>
+
+                </Link>
+            );
+        })  // retornar la vista aqui.. mirar Card     
+    } else {
+        display = <h2> No se encontro información.</h2>;
+    }   
     return (
-
         <>
-
             <Navbar />
-
-                <div>
-                    {Array.from(set).map( element => {
-                        return(
-                            <div key={element}>
-                                <h2>{element}</h2>
-                            </div>
-                        )
-                    })}
-                </div>
-
-
             <div className='container-title'>
-                <h2>Mis servicios</h2>
-                <button className='btn-service'>Nuevo Servicio</button>
+                    <h2>Mis servicios</h2>
+                    <button className='btn-service'>Nuevo Servicio</button>
             </div>    
-
-           
-            <table className='content-table'>
-                <thead>
-                    <tr className='column'>
-                        <th>Id</th>
-                        <th>Servicio</th>
-                        <th>Fecha</th>
-                        <th>Ciudad</th>
-                        <th>Dirección</th>
-                        <th>Valor $</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-            </table>
-
-            <table className='content-table'>
-
-                <tbody>
-                    <tr className='row'>
-                        <td> 1 </td>
-                        <td> Indefinido </td>
-                        <td>12 juni 22</td>
-                        <td> Bogotá </td>
-                        <td> calle 23 b # 45 </td>
-                        <td>$ 50.000</td> 
-                        <td> No funcional </td>
-                    </tr>
-
-                    {/*
-                    <tr className='row'>
-                        <td>2</td>
-                        <td>MENSAJERIA</td>
-                        <td>30/JUN/22</td>
-                        <td>BOGOTÁ</td>
-                        <td>CLL 123 # 23 -64</td>
-                        <td>$ 100.000 COP</td>
-                        <td>Activo</td>
-                    </tr>
-
-                    <tr className='row'>
-                        <td>3</td>
-                        <td>MENSAJERIA</td>
-                        <td>10/JUL/22</td>
-                        <td>BOGOTÁ</td>
-                        <td>CLL 23 # 23 -64</td>
-                        <td>$ 100.000 COP</td>
-                        <td>Activo</td>
-                    </tr>
-                    */}
-                    
-                </tbody>
-
-            </table>
-
+                {/* <table className='content-table'>
+                    <thead>
+                        <tr className='column'>
+                            <th>Id</th>
+                            <th>Servicio</th>
+                            <th>Fecha</th>
+                            <th>Ciudad</th>
+                            <th>Dirección</th>
+                            <th>Valor $</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                </table> */}
+    
+                <table className='content-table'>
+                    <tbody>
+                        {display}
+                    </tbody>
+                </table>
             <Footer />
-        
         </>
-
-        
     ) // () return
-
 }
     
 export default ServicesList

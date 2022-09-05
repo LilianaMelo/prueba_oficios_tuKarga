@@ -6,6 +6,7 @@
     color: white;
     padding: 20px;
     font-size: 11px;
+    justify-items: center;
 }
 
 .links-footer {
@@ -16,6 +17,7 @@
 
     display: flex;
     /* padding: 20px; */
+    justify-items: center;
     
 
 }

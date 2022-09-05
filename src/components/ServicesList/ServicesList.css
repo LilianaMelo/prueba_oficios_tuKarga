@@ -4,8 +4,8 @@
     display: flex;
     /* width: 10px;
     height: 10px; */
+    padding-bottom: 40px;
 }
-
 
 
 .container-title {
@@ -25,15 +25,22 @@
 
 
 .row {
-    display: inline-flex; 
-    list-style: none; 
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
 }
 
 .row td {
-    width: 130px;
-    /* display: flex; */
+    width: 120px;
+    display: flex;
 }
 
+
+.id-fondo {
+    background: #FCFCED;;
+    border-radius: 8px;
+    /* align-items: center; */
+}
 
 .btn-service {
     padding: 10px;
@@ -42,4 +49,8 @@
     box-shadow: rgb(191,77,0);
     color: white;
     font-weight: bold;
+}
+
+h2 {
+    color: #3C635D;
 }
