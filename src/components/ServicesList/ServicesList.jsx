@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import './ServicesList.css'
 
 const ServicesList = () => {
 
-    const id = 131 // id usuario que se logea
+    // const id = 131 // id usuario que se logea    
+    const {id} = useParams(); // id del servicio y mismo de la urlApi
+
+    
 
     const [ list, setService ] = useState([]);
-    // console.log("datos lista");
-    // console.log(list);
+    console.log("datos lista");
+    console.log(list);
 
     const urlApi = `https://api.delivery.iguarayalabs.com/app/services-list/0/${id}`
 
@@ -18,7 +21,7 @@ const ServicesList = () => {
         ( async function () {
             const respuesta = await fetch(urlApi).then((res) => res.json());
             setService(respuesta.data); // .data
-            // console.log(respuesta.data); 
+            console.log(respuesta.data); 
         })();
     },[urlApi])
     
@@ -28,8 +31,8 @@ const ServicesList = () => {
         display = list.map((item, i) => { 
             const { id, service_name, status_string, price_text, date_text } = item;
             // id del item o servicio enviarlo al Map view.
-            // console.log("informacion del servicio: " );
-            // console.log(id, service_name, status_string, price_text, date_text); {/* se envia este id a la vista del mapa */}
+            //console.log("informacion del servicio: " );
+            //console.log(id, service_name, status_string, price_text, date_text); {/* se envia este id a la vista del mapa */}
             return (
 
                 <Link

@@ -25,14 +25,3 @@ const Markers = ({address} ) => {
 };
 
 export default Markers
-
-// Eliminar
-// <div>
-// {Array.from(set).map( element => {
-//     return(
-//         <div key={element}>
-//             <h2>{element}</h2>
-//         </div>
-//     )
-// })}
-// </div>

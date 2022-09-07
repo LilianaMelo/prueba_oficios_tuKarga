@@ -15,10 +15,9 @@ const MapView = () => {
     // aqui va la informacion del detalle.
 
     // const ServicesList = ServicesList({id}); // importa el id del servicesList
-
-    // const id = 1 ; 
-
+    
     const {id} = useParams(); // id del servicio y mismo de la urlApi
+
     const [ infoData, setInfoData ] = useState([]);
 
     const { price_text, type_pay, status_string, address } = infoData;
@@ -34,7 +33,7 @@ const MapView = () => {
         (async function () {
             const respuesta = await fetch(urlAPI).then((res) => res.json());
             setInfoData(respuesta.data);
-            // console.log(respuesta.data);
+            console.log(respuesta.data);
         })();
 
     }, [urlAPI]);

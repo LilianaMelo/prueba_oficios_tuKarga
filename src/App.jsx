@@ -5,18 +5,21 @@ import MapView from './components/Map/MapView';
 import ServicesList from './components/ServicesList/ServicesList';
 import Login from './components/Login/Login';
 
+import {login} from './assets/data'
 
 
 function App() {
+
+
 
     return (
 
         <div>
             <Routes>
-                {/* <Route path='/' element={<Home />} /> */}
                 <Route path='/' element={<Login />} />
-                <Route path='/:id' element={<MapView />} />
-                <Route path='/:id' element={<ServicesList  /> } />
+                <Route path=':id' element={<ServicesList  /> } /> 
+                <Route path=':id' element={<MapView />} />
+    
             </Routes>
         </div>
 
@@ -33,17 +36,6 @@ function App() {
 
     // https://api.delivery.iguarayalabs.com/app ==> URL principal
 
-    /*
-    const url = `https://api.delivery.iguarayalabs.com/app/services-detail/${35}`
-
-    useEffect(() => {
-        (async function(){
-            const data = await fetch(url).then(res => res.json());
-            setUserInfo(data.data);
-            // console.log(data.data);
-        })();
-    }, [url])
-    */
 
 const Home = () => {
         
@@ -53,8 +45,9 @@ const Home = () => {
         <>
 
             {/* <ServicesList  /> */}
-
-            <Login />
+            {/* username={username} password={password} */}
+       
+            <Login login={login} />
 
         </>
         

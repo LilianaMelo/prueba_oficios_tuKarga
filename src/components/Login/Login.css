@@ -47,9 +47,19 @@ input {
     margin: 20px;
     color: white;
     width: 272px;
-    padding: 3px;
+    padding: 4px;
     border: 1px solid #9D9D9D;
     border-radius: 10px;
+    
+}
+
+.a {
+    align-items: center;
+    text-decoration:none;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

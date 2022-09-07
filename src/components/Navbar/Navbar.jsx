@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css'
 import logo from './Marca.png'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -9,8 +10,9 @@ const Navbar = () => {
         <header>
             <nav className='navbar'>
                 <div className='containerNavbar'>
-                    {/* <a href='*'>Logo</a> */}
-                    <img src={logo} alt='logo' href='*' />
+                    <Link to="/">
+                        <img src={logo} alt='logo' href='*' />
+                    </Link>    
                 </div>
                 <div className='box-elements'>
                     <a href='*'>Home</a>
