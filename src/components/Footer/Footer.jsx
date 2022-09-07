@@ -11,10 +11,13 @@ const Footer = () => {
 
         <footer>
             <div className='Footer'>
-            <img className='logo'src={logo} alt="logo"/>
+            <div className='container-logo'>
+                <img className='logo'src={logo} alt="logo"/>
+            </div>
                 <div className='group-links'>
+                    
                     <div className='links-footer'>
-                        
+                    
                         <p>Empresas</p>
                         <p>Transportador</p>
                         <p>Iniciar Sesión</p>
@@ -38,11 +41,14 @@ const Footer = () => {
                             <img className='img-redes' src={logosRedes} alt="redes"/>
                         </div>
                     </div>
+
                 </div>
-                
-                <hr />
-                
-                <p className='copy'><br />Todos los derechos reservados - Copyrigth2022 - Bogotá/Colombia</p>
+
+
+                <div className='group-copy'>
+                    <hr />
+                    <p><br />Todos los derechos reservados - Copyrigth2022 - Bogotá/Colombia</p>
+                </div>
             </div>
             
         </footer>
