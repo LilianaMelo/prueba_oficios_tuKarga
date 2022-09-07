@@ -1,11 +1,11 @@
-.content-table{
-    padding-top: 20px;
-    padding-left: 50px;
+.content-table {
     display: flex;
-    /* width: 10px;
-    height: 10px; */
-    padding-bottom: 40px;
+    padding-left: 50px;
     flex-wrap: wrap;
+    min-width: 975px;
+    overflow-x: auto; /* barra de scroll abajo */
+    overflow-y: hidden; /* barra de scroll derecha desaparece */
+    margin-bottom: 10px;
 }
 
 
@@ -13,6 +13,7 @@
     display: flex;
     padding: 46px;
     justify-content: space-between;
+    margin-bottom: 60px;
 }
 
 .column {
@@ -38,7 +39,7 @@
 
 
 .id-fondo {
-    background: #FCFCED;;
+    background: #FCFCED;
     border-radius: 8px;
     /* align-items: center; */
 }

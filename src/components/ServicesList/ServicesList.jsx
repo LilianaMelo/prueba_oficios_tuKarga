@@ -19,11 +19,9 @@ const ServicesList = () => {
             const respuesta = await fetch(urlApi).then((res) => res.json());
             setService(respuesta.data); // .data
             // console.log(respuesta.data); 
-
         })();
     },[urlApi])
-   
-
+    
     let display = ("");
 
     if (list) {
@@ -40,7 +38,7 @@ const ServicesList = () => {
                     to={`${id}`}
                 >
                 <table className='content-table'>
-                    <tbody>
+                    <tbody className='tbody'>
                         <tr className='row' >
                             <th key={i} className="id-fondo">{id}</th>
                             <td>{service_name}</td>

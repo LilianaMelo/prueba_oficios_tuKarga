@@ -40,11 +40,14 @@ a {
     padding: 10px;
     margin-left: 5px;
     border-radius:  8px;
-    color: rgb(191,77,0); /* rgba(219,89,0,1) ;  rgb(191,77,0); sombras */
-    box-shadow: rgb(191,77,0);
-    border-color:  rgb(176, 70, 0);
+    color: #D74723;
     background: white;
-    font: bold;
+    
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid #D74723;
+    border-radius: 10px;
 }
 
 img {

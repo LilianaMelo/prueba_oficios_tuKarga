@@ -1,0 +1,55 @@
+/* Login */
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+
+    margin: 50px;
+
+}
+
+
+.container-form .btnsSelec {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+
+    width: 380px;
+    height: 176px;
+
+    margin: 30px;
+}
+
+input {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 272px;
+    height: 32px;
+    padding: 8px;
+
+    border: 1px solid #9D9D9D;
+    border-radius: 10px;
+}
+
+.button {
+    background: #FF6600;
+    cursor: pointer;
+    margin: 20px;
+    color: white;
+    width: 272px;
+    padding: 3px;
+    border: 1px solid #9D9D9D;
+    border-radius: 10px;
+}
+
+

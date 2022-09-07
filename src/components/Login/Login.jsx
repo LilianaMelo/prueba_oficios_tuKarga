@@ -1,12 +1,13 @@
 // import React from 'react';
 import React, { Fragment, useEffect, useState } from 'react';
+import Footer from '../Footer/Footer';
+import logo from '../Navbar/Marca.png'
+import btnsSelec from './Btns_Seleccionables.png'
+import './Login.css';
 
-
-const Home = () => <h1>Home</h1>
+// const Home = () => <h1>Home</h1>
 
 const Login = () => {
-
-  
 
     // const url = `https://api.delivery.iguarayalabs.com/app/login/data?username=${username}&password=${password}`;
     // ${username}&${password}
@@ -57,15 +58,31 @@ const Login = () => {
 
     return (
 
-      // <h1>Login</h1>
-
         <Fragment>
 
-          <Home />
+          <header>
+            <nav className='navbar'>
+                <div className='containerNavbar'>
+                    {/* <a href='*'>Logo</a> */}
+                    <img src={logo} alt='logo' href='*' />
+                </div>
+                <div className='box-elements'>
+                    <a href='*'>Home</a>
+                    <a href='*'>Empresas</a>
+                    <a href='*'>Transportador</a>
+                    <button className='btn-nav' href='*'>Ingresar</button>
+                </div>
+            </nav>
+        </header>
         
-            <h1>Iniciar Sesión</h1>
+            
 
-            <form>
+            <form className='container-form'>
+
+              <h1>Iniciar Sesión</h1>
+              <p>Selecciona el tipo de usuario para iniciar sesión</p>
+
+                <img src={btnsSelec} alt="botones" className='btnsSelec' />
 
                 <input type="text" placeholder="Correo" name='USERNAME' onChange={inputChange}/>
                 <input type="password" placeholder="Contraseña" name='PASSWORD' onChange={inputChange} />
@@ -76,8 +93,8 @@ const Login = () => {
                 <p>¿No tienes una cuenta? <b>Registrate</b>  </p>
 
             </form>
+          <Footer />
             
-        
         </Fragment>
         
     )
