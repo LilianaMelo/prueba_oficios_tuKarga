@@ -50,21 +50,6 @@ const MapView = () => {
         <>    
                 
             <Navbar />
-
-                {/* <p>Aqui va el Array: </p>
-                
-                {Array.from(address).map( item => {
-                    console.log(item.longitud)
-                    console.log(item.latitud)
-                    return(
-                        <div key={item}>
-                            <h4>{item.address}</h4>
-                        </div>
-                    )
-                })
-
-                } */}
-
                 <div className='container'>
 
                 <div className='container-1'>
@@ -82,16 +67,12 @@ const MapView = () => {
                             <p>Moto KPP 45F</p>
                         </div>
                         
-
                         <p className='parrafo'><br />$ Costo servicio: {price_text}</p>
                         <p className='parrafo'>$ Medio de pago: {type_pay}</p>
-
-                        {/* <br />
-                        <br />
-                        <br /> */}
                        
+                    <div className='container-note'>
                         <p className='note'>* Nota: Recuerda que si ya prepagaste el servicio y al finalizar la diligencia el profesional excede los 60 minutos, debera cancelarse en efetivo al profesional.</p>
-                        
+                    </div>
                         
                 </div>
 

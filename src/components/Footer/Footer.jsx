@@ -11,13 +11,9 @@ const Footer = () => {
 
         <footer>
             <div className='Footer'>
-                
-                    <img className='logo'src={logo} alt="logo"/>
-         
+                <img className='logo'src={logo} alt="logo"/>
                 <div className='group-links'>
-                    
                     <div className='links-footer'>
-                    
                         <p>Empresas</p>
                         <p>Transportador</p>
                         <p>Iniciar Sesión</p>
@@ -33,7 +29,6 @@ const Footer = () => {
                         <div className=''>
                             <img src={mediosPago} alt="mediosPago"/>
                         </div>
-                        
                     </div>
                     <div className='links-footer'>
                         <p>Siguenos en todas nuestra redes</p>
@@ -41,16 +36,12 @@ const Footer = () => {
                             <img className='img-redes' src={logosRedes} alt="redes"/>
                         </div>
                     </div>
-
                 </div>
-
-
                 <div className='group-copy'>
                     <hr />
                     <p><br />Todos los derechos reservados - Copyrigth2022 - Bogotá/Colombia</p>
                 </div>
             </div>
-            
         </footer>
     )
 }

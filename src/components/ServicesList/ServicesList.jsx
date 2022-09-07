@@ -38,11 +38,7 @@ const ServicesList = () => {
                     key={id}
                     className="link-page-map"
                     to={`${id}`}
-                
                 >
-                
-
-
                 <table className='content-table'>
                     <tbody>
                         <tr className='row' >
@@ -70,21 +66,7 @@ const ServicesList = () => {
             <div className='container-title'>
                     <h2>Mis servicios</h2>
                     <button className='btn-service'>Nuevo Servicio</button>
-            </div>    
-                {/* <table className='content-table'>
-                    <thead>
-                        <tr className='column'>
-                            <th>Id</th>
-                            <th>Servicio</th>
-                            <th>Fecha</th>
-                            <th>Ciudad</th>
-                            <th>Dirección</th>
-                            <th>Valor $</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                </table> */}
-    
+            </div>     
                 <table className='content-table'>
                     <tbody>
                         {display}
@@ -92,7 +74,7 @@ const ServicesList = () => {
                 </table>
             <Footer />
         </>
-    ) // () return
+    )
 }
     
 export default ServicesList
