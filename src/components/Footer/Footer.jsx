@@ -11,9 +11,9 @@ const Footer = () => {
 
         <footer>
             <div className='Footer'>
-            <div className='container-logo'>
-                <img className='logo'src={logo} alt="logo"/>
-            </div>
+                
+                    <img className='logo'src={logo} alt="logo"/>
+         
                 <div className='group-links'>
                     
                     <div className='links-footer'>
