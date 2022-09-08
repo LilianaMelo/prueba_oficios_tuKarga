@@ -18,9 +18,7 @@ const Login = () => {
 
   }
 
-  const login = () => {
-    let username = "";
-    let password = "";
+  const login = (username, password) => {
       if(username ===  "j@topolabs.com" && password === 12345 ) {
           alert("Login correcto");
       }   else {
@@ -69,6 +67,8 @@ const Login = () => {
                 
                 <input type="password" placeholder="Contraseña" name='password' />
             
+             
+
                 {/* <button className='button'>Ingresar</button> */}
 
                 <p><b>Olvidé mi contraseña</b></p>
@@ -79,6 +79,7 @@ const Login = () => {
             </form>
           <Footer />
         </Fragment>
+        
     )
 }
 
